@@ -14,6 +14,9 @@ class SocialiteController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
+
+
+
     public function handleGoogleCallback()
     {
         try {
@@ -42,7 +45,7 @@ class SocialiteController extends Controller
                 return redirect()->route('home');
             }
         } catch (\Throwable $th) {
-
+            return view('auth/error');
         }
     }
 

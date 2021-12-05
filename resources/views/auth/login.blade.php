@@ -1,88 +1,72 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!-- MASUK -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <!-- start card -->
+            <div class="card text-center">
+                <div class="card-header">
+                    <h1>Masuk</h1>
+                </div>
+                <div class="card-body py-5">
 
-                <div class="card-body">
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email"
+                                    value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
+                                    @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                    @enderror
+
+                                </div>
+                                <div class="form-group">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"
+                                        placeholder="Kata sandi" autocomplete="current-password">
+
+                                        @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                        @enderror
+
+                                </div>
+
                             </div>
-                        </div>
+                            <div class="col-12">
+                                <input type="submit" value="Masuk" class="btn btn-dark btn-bordered w-100 mt-3 mt-sm-4">
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                <div class="mt-3">
+                                    <a href="{{route('google.login')}}" class="btn-light bg-danger text-light px-2 py-1"
+                                        style="border-radius: 10px;">
+                                        <i class="fab fa-google mr-2"></i>  Google</a>
+                                    <a href="{{route('github.login')}}" class="btn-light bg-dark text-light px-2 py-1"
+                                        style="border-radius: 10px;">
+                                        <i class=" fab fa-github mr-2"></i> GitHub</a>
+                                </div>
+                                <div class="contact-bottom">
+                                    <span class="d-inline-block mt-3">Belum punya akun? <a
+                                            href="member-daftar.html" class=" text-primary">Daftar</a></span>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
                     </form>
-                    <div class="text-center">
-                        <h5 class="mt-3 text-muted">Sign in with</h5>
-                        <ul class="social-list list-inline mt-3 mb-0">
-                            <li class="list-inline-item">
-                                <a href=" {{route('google.login')}} " class="social-list-item border-danger text-danger">
-                                    <i class="mdi mdi-google" title="Google">Google</i>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="{{route('github.login')}}" class="social-list-item border-secondary text-secondary">
-                                    <i class="mdi mdi-github" title="GitHub">GitHub</i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="card-footer">
+                    Copyright &copy; 2021. Developted by <a href="#">Johan Nasendi</a>
                 </div>
             </div>
+            <!-- endcard -->
         </div>
     </div>
 </div>
+<!-- END MASUK -->
 @endsection
