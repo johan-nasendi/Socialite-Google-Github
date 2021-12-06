@@ -37,4 +37,6 @@
 
 <ul>
     <li>[*] Register manually</li>
+    <li>[*] Aler for error message</li>
+    <li>[*] Aler for success message</li>
 </ul>

@@ -28,7 +28,7 @@ class SocialiteController extends Controller
                 // Auth::login($pinguser->hasRole == "member");
                 Auth::login($pinguser);
                 // Alert::success('Success', 'You have successfully logged in');
-                return redirect()->route('home');
+                return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Login' );
             } else{
                 $newUser = user::create([
                     'name' => $user->name,
@@ -42,10 +42,10 @@ class SocialiteController extends Controller
 
                 Auth::login($newUser);
                 // Alert::success('Success', 'Hello Broooo');
-                return redirect()->route('home');
+                 return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Terdaftar' );
             }
         } catch (\Throwable $th) {
-            return view('auth/error');
+            return redirect()->route('login')->with('status','Email sudah terdaftar,gunakan email yang lain' );
         }
     }
 
@@ -65,7 +65,7 @@ class SocialiteController extends Controller
                 // Auth::login($pinguser->hasRole == "member");
                 Auth::login($msukuser);
                 // Alert::success('Success', 'You have successfully logged in');
-                return redirect()->route('home');
+                return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Login' );
             } else{
                 $baruUser = user::create([
                     'name' => $member->name,
@@ -82,7 +82,7 @@ class SocialiteController extends Controller
                 return redirect()->route('home');
             }
         } catch (\Throwable $th) {
-
+            return redirect()->route('login')->with('status','Email sudah terdaftar,gunakan email yang lain' );
         }
     }
 
