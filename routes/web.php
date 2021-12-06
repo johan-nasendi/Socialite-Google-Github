@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,11 +19,25 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     // return view('landing-page');
-    return redirect('/login');
+    return redirect('/masuk');
 });
 
-Auth::routes();
+Auth::routes(
+    [
+        'login' => false,
+        'register'=> false
+    ]
+);
 
+// masuk
+Route::get('/masuk', [LoginController::class, 'showLoginForm'])->name('masuk');
+Route::post('/masuk', [LoginController::class, 'login']);
+
+// daftar
+Route::get('/daftar', [RegisterController::class, 'showRegistrationForm'])->name('daftar');
+Route::post('/daftar', [RegisterController::class, 'register']);
+
+// Home
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Auth Google Api

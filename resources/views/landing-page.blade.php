@@ -11,8 +11,8 @@
                     <h1>SaCode Sosialite Auth</h1>
                 </div>
                 <div class="card-body py-5">
-                    <a href="{{ route('login') }}" class="btn btn-dark mx-5"><h1>Masuk</h1></a>
-                    <a href="{{ route('register') }}" class="btn btn-dark bg-light text-dark mx-5"><h1>Daftar</h1></a>
+                    <a href="{{ route('masuk') }}" class="btn btn-dark mx-5"><h1>Masuk</h1></a>
+                    <a href="{{ route('daftar') }}" class="btn btn-dark bg-light text-dark mx-5"><h1>Daftar</h1></a>
                 </div>
                 <div class="card-footer">
                     Copyright &copy; 2021. Developted by <a href="#">Johan Nasendi</a>

@@ -39,4 +39,6 @@
     <li>[*] Register manually</li>
     <li>[*] Aler for error message</li>
     <li>[*] Aler for success message</li>
+    <li>[*] URLs login to masuk</li>
+    <li>[8] URLs register to daftar</li>
 </ul>

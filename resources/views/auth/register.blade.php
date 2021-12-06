@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body py-5">
 
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('daftar') }}">
                         @csrf
                         <div class="row">
                             <div class="col-12">

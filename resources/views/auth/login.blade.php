@@ -19,7 +19,7 @@
                 <div class="card-body py-5">
 
 
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('masuk') }}">
                         @csrf
                         <div class="row">
 

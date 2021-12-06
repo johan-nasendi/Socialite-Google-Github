@@ -19,15 +19,15 @@
                     <ul class="nav">
                         <!-- Authentication Links -->
                         @guest
-                            @if (Route::has('login'))
+                            @if (Route::has('masuk'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{ route('login') }}">{{ __('Masuk') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('masuk') }}">{{ __('Masuk') }}</a>
                                 </li>
                             @endif
 
-                            @if (Route::has('register'))
+                            @if (Route::has('daftar'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Daftar') }}</a>
+                                    <a class="nav-link text-light" href="{{ route('daftar') }}">{{ __('Daftar') }}</a>
                                 </li>
                             @endif
                         @else
