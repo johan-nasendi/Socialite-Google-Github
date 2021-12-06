@@ -17,19 +17,41 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Nama Lengkap">
-
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                    name="name" value="{{ old('name') }}" required autocomplete="name"
+                                    autofocus placeholder="Nama Lengkap">
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
+                                </div>
 
+                                <div class="form-group">
+                                    <input type="text" class="form-control @error('username') is-invalid @enderror"
+                                    name="username" value="{{ old('username') }}" required autocomplete="username"
+                                    autofocus placeholder="Username">
+                                    @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" name="email" placeholder="Email"
-                                        required="required">
+                                    <input type="number" class="form-control @error('phone') is-invalid @enderror"
+                                    name="phone" value="{{ old('phone') }}" required autocomplete="phone"
+                                    autofocus placeholder="Phone">
+                                    @error('phone')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
 
+                                <div class="form-group">
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                    value="{{ old('email') }}" required autocomplete="email"
+                                    name="email" placeholder="Email" required="required">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -39,18 +61,19 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Kata Sandi">
-
+                                    <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                    name="password" required autocomplete="new-password"
+                                    placeholder="Kata Sandi">
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Ulangi Kata Sandi">
+                                    <input type="password" class="form-control" name="password_confirmation"
+                                     required autocomplete="new-password" placeholder="Ulangi Kata Sandi">
                                 </div>
 
                                 <div class="form-group form-check">
@@ -77,7 +100,7 @@
                             </div>
                         </div>
                     </form>
-                    
+
                 </div>
                 <div class="card-footer">
                     Copyright &copy; 2021. Developted by <a href="#">Johan Nasendi</a>

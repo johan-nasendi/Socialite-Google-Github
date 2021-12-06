@@ -32,3 +32,9 @@
     <li>URLs login to masuk</li>
     <li>URLs register to daftar</li>
 </ul>
+
+## Already done
+
+<ul>
+    <li>[*] Register manually</li>
+</ul>
