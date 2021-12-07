@@ -6,7 +6,8 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailNotify;
 
 class SocialiteController extends Controller
 {
@@ -14,8 +15,6 @@ class SocialiteController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
-
-
 
     public function handleGoogleCallback()
     {
@@ -41,7 +40,7 @@ class SocialiteController extends Controller
                 ]);
 
                 Auth::login($newUser);
-                // Alert::success('Success', 'Hello Broooo');
+                Mail::to($newUser->email)->send(new MailNotify($newUser->name));
                  return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Terdaftar' );
             }
         } catch (\Throwable $th) {
