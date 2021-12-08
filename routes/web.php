@@ -5,6 +5,8 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\SendEmailControoler;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,10 +26,16 @@ Route::get('/', function () {
 
 Auth::routes(
     [
-        'login' => false,
+
         'register'=> false
     ]
 );
+
+// Route::get('email','SendMailController@index');
+// Route::post('email/send','SendMailController@send');
+
+// Route::get('/send', [SendEmailControoler::class, 'index']);
+// Route::post('/kirim-email', [SendEmailControoler::class, 'posts'])->name('post.email');
 
 // masuk
 Route::get('/masuk', [LoginController::class, 'showLoginForm'])->name('masuk');
@@ -38,7 +46,7 @@ Route::get('/daftar', [RegisterController::class, 'showRegistrationForm'])->name
 Route::post('/daftar', [RegisterController::class, 'register']);
 
 // Home
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/beranda', [App\Http\Controllers\HomeController::class, 'index'])->name('beranda');
 
 // Auth Google Api
 Route::get('auth/google', [SocialiteController::class, 'redirectToGoogle'])->name('google.login');

@@ -26,7 +26,6 @@ class SocialiteController extends Controller
                 //   dd($user->id);
                 // Auth::login($pinguser->hasRole == "member");
                 Auth::login($pinguser);
-                // Alert::success('Success', 'You have successfully logged in');
                 return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Login' );
             } else{
                 $newUser = user::create([
@@ -40,7 +39,7 @@ class SocialiteController extends Controller
                 ]);
 
                 Auth::login($newUser);
-                Mail::to($newUser->email)->send(new MailNotify($newUser->name));
+
                  return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Terdaftar' );
             }
         } catch (\Throwable $th) {
