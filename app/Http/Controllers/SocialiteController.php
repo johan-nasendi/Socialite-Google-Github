@@ -16,18 +16,19 @@ class SocialiteController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function handleGoogleCallback()
+    public function handleGoogleCallback(Request $request)
     {
         try {
+
             $user = Socialite::driver('google')->user();
             // dd($user);
             $pinguser = User::where('google_id',$user->getId())->first();
             if($pinguser){
-                //   dd($user->id);
                 // Auth::login($pinguser->hasRole == "member");
                 Auth::login($pinguser);
                 return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Login' );
-            } else{
+            }
+            else {
                 $newUser = user::create([
                     'name' => $user->name,
                     'username' => $user->email,
@@ -37,11 +38,10 @@ class SocialiteController extends Controller
                     'google_id' => $user->id,
                     'password' => bcrypt('admin123')
                 ]);
-
                 Auth::login($newUser);
-
-                 return redirect()->route('home')->with('status','Selamat Datang | Anda Berhasil Terdaftar' );
+                 return redirect()->route('home')->with('status','Anda Berhasil' );
             }
+
         } catch (\Throwable $th) {
             return redirect()->route('login')->with('status','Email sudah terdaftar,gunakan email yang lain' );
         }

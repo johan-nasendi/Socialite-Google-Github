@@ -9,6 +9,12 @@
             <div class="card text-center">
                 <div class="card-header">
                     <h1>Daftar</h1>
+                    @if (session('status'))
+                    <div class="alert alert-danger alert-dismissible fade show">
+                      <button type="button" class="close" data-dismiss="alert">&times;</button>
+                      <strong>{{ session('status') }}!</strong>
+                    </div>
+                  @endif
                 </div>
                 <div class="card-body py-5">
 
