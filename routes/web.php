@@ -26,7 +26,7 @@ Route::get('/', function () {
 
 Auth::routes(
     [
-
+        'verify'=>true,
         'register'=> false
     ]
 );
@@ -46,7 +46,7 @@ Route::get('/daftar', [RegisterController::class, 'showRegistrationForm'])->name
 Route::post('/daftar', [RegisterController::class, 'register']);
 
 // Home
-Route::get('/beranda', [App\Http\Controllers\HomeController::class, 'index'])->name('beranda');
+Route::get('/beranda', [App\Http\Controllers\HomeController::class, 'index'])->middleware(['auth','verified'])->name('beranda');
 
 // Auth Google Api
 Route::get('auth/google', [SocialiteController::class, 'redirectToGoogle'])->name('google.login');
