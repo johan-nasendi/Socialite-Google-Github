@@ -16,29 +16,18 @@
          <li>[6] php artisan migrate </li>
     <li>[7] Buat Api Goodgle dan GitHub
         <a href="https://github.com/settings/developers">
-            <p>Developer Github</p>
+            <p> Developer <b>Github</b></p>
         </a>
         <a href="https://console.developers.google.com/">
-            <p>  Console Google</p>
+            <p>  Console <b>Google</b></p>
         </a>
     </li>
 </ul>
 
-## Notes for Jhon to be completed
+## You will need to make sure your server meets the following requirements:
 <ul>
-    <li>Register manually</li>
-    <li>Aler for error message</li>
-    <li>Aler for success message</li>
-    <li>URLs login to masuk</li>
-    <li>URLs register to daftar</li>
+    <li>Composer 2</li>
+    <li>Php v_8</li>
+    <li>Mysql or DLL</li>
 </ul>
 
-## Already done
-
-<ul>
-    <li>[*] Register manually</li>
-    <li>[*] Aler for error message</li>
-    <li>[*] Aler for success message</li>
-    <li>[*] URLs login to masuk</li>
-    <li>[8] URLs register to daftar</li>
-</ul>
