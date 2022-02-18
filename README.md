@@ -15,7 +15,7 @@
         <li>[5] Enter your database name </li>
          <li>[6] php artisan migrate </li>
     <li>[7] Buat Api Goodgle dan GitHub
-        <a href="https://github.com/settings/applications">
+        <a href="https://github.com/settings/developers">
             <p>Developer Github</p>
         </a>
         <a href="https://console.developers.google.com/">
